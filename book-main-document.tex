@@ -1,0 +1,251 @@
+%%%
+% Run this file multiple times to ensure TOC, Bibliography, References, etc are populated correctly
+%
+% For font and typeface related issues, edit the book-template.sty file
+%
+
+%%%
+% Preamble
+%
+
+\documentclass{sumintegrals-book}
+
+%%%
+% Be aware there are issues with bold math, so \mathbf{...} will work but not in section heads or chapter titles.
+%
+% To fix some issues, you may want to consider using the following package:
+%\usepackage{mathptmx}
+%
+% For postscript text:
+\usepackage{sumintegrals-book}
+\usepackage{imakeidx}
+
+%%%
+% Some other packages to consider are:
+%
+%\usepackage{lipsum} % This will make "junk" text
+\usepackage{chapterbib} % This will make chapter bibliographies with BibTeX
+%\usepackage{multind} % This is useful for multiple indices
+%\usepackage{answers} % This is used for answers to problems
+
+%%%
+% Set the depth of section head numbering for Table of Contents:
+% 0=Chapters, 1=Sections, 2=Subsections, 3=Subsubsections
+%
+\setcounter{tocdepth}{1}
+\setcounter{chapter}{0} % This sets the "first" chapter number.
+
+%%%
+% To make the document visibly a "draft" document, use the following command which adds double spacing between lines, current date/time at the footer.
+%\draft
+%
+% To prevent tables from double spacing with this activated, use
+%\renewcommand{\arraystretch}{0.6}
+
+%%%
+% Greek Alphabet
+% The letters are not all defined, so here are the commands added to ensure all Greek letters appear:
+\newcommand{\Alpha}{\mathrm{A}}
+\newcommand{\Beta}{\mathrm{B}}
+\newcommand{\Epsilon}{\mathrm{E}}
+\newcommand{\Zeta}{\mathrm{Z}}
+\newcommand{\Eta}{\mathrm{H}}
+\newcommand{\Iota}{\mathrm{I}}
+\newcommand{\Kappaa}{\mathrm{K}}
+\newcommand{\Mu}{\mathrm{M}}
+\newcommand{\Nu}{\mathrm{N}}
+\newcommand{\Omicron}{\mathrm{O}}
+\newcommand{\Rho}{\mathrm{P}}
+\newcommand{\Tau}{\mathrm{T}}
+\newcommand{\Chi}{\mathrm{X}}
+
+%%%
+% Generic Quantifier Q
+\newcommand{\quantif}{\hbox{\tikz{
+\draw[line width=0.45pt] (0,0) circle (3pt and 4pt);
+\draw[line width=0.45pt, line cap=round] (1pt,-2pt) -- ++(2pt,-2pt);
+}}}
+
+%%%
+% Put the index in a Table of Contents
+\makeindex[intoc]
+
+% END OF PREAMBLE
+%%%
+% BEGIN OF DOCUMENT
+%
+
+\begin{document}
+
+%%%
+% Set the main title, subtitle, author(s), affiliation(s), etc.
+\booktitle{Discrete Mathematics}
+\subtitle{with Logic and Set Theory}
+
+\authors{Sum Integrals\\
+\affil{$\Sigma\int s$}
+}
+
+\offprintinfo{Discrete Mathematics}{$\Sigma\int s$}
+% \\ Can be used if the title, edition, etc are too wide
+
+%%%
+% FRONT COVER (sometimes omitted for PDF)
+%\frontcoverpage
+
+%%%
+% FRONT PAGE
+\halftitlepage
+
+%%%
+% INSIDE BOOK FRONT PAGE
+\titlepage
+
+%%%
+% DEDICATION PAGE
+\dedication{For all those who helped me along the way.}
+
+%%%
+% CONTRIBUTORS
+%\begin{contributors}
+%\name{First Last}, Affiliation, Location.
+%\name{First Last}, Affiliation, Location.
+%\end{contributors}
+
+%%%
+% CONTENTS IN BRIEF AND TABLE OF CONTENTS
+%\contentsinbrief
+\tableofcontents
+
+%%%
+% LIST OF FIGURES AND LIST OF TABLES
+%\listoffigures
+%\listoftables
+
+%%%
+% FORWARD
+%\begin{forward}
+%Forward text.
+%\end{forward}
+
+%%%
+% SECTION/CHAPTER DIAGRAM
+$$
+\begin{tikzcd}
+\textbf{\thetitle}&\\
+\boxed{\bf CH1}\arrow[d]&\\
+\boxed{\bf CH2}\arrow[d]\arrow[r]&\boxed{\bf CH3}\\
+\boxed{\bf CH4}\arrow[d]&\\
+\boxed{\bf CH5}\arrow[d]&\\
+\boxed{\bf CH6}\arrow[d]\arrow[r]&\boxed{\bf CH7}\arrow[d]\\
+\boxed{\bf CH9}&\boxed{\bf CH8}
+\end{tikzcd}
+$$
+
+%%%
+% PREFACE
+\begin{preface}
+Preface text.
+\end{preface}
+
+%%%
+% ACKNOWLEDGEMENTS
+%\begin{acknowledgements}
+%Acknowledgements text.
+%\end{acknowledgements}
+
+%%%
+% ACRONYM LIST
+\begin{acronyms}
+\acro{WLOG}{Without Loss of Generality}
+\acro{ISTS}{It Suffices to Show}
+\acro{TFAE}{The Following Are Equivalent}
+\acro{AFC}{Assume for Contradiction}
+\acro{PLAE}{Proof Left as Exercise}
+\end{acronyms}
+
+%%%
+% GLOSSARY LIST
+%\begin{glossary}
+%\term{theTerm}Description of the term.
+%
+%\term{theTerm}Description of the term.
+%
+%\end{glossary}
+
+%%%
+% SYMBOL LIST
+\begin{symbols}
+\fbunch{Greek Alphabet} % FIRST BUNCH
+\term{\Alpha~\alpha}{Alpha}
+\term{\Beta~\beta}{Beta}
+\term{\Gamma~\gamma}{Gamma}
+\term{\Delta~\delta}{Delta}
+\term{\Epsilon~\e}{Epsilon}
+\term{\Zeta~\zeta}{Zeta}
+\term{\Eta~\eta}{Eta}
+\term{\Theta~\theta~\vartheta}{Theta}
+\term{\Iota~\iota}{Iota}
+\term{\Kappa~\kappa~\varkappa}{Kappa}
+\term{\Lambda~\lambda}{Lambda}
+\term{\Mu~\mu}{Mu}
+\term{\Nu~\nu}{Nu}
+\term{\Xi~\xi}{Xi}
+\term{\Omicron~o}{Omicron}
+\term{\Pi~\pi~\varpi}{Pi}
+\term{\Rho~\rho}{Rho}
+\term{\Sigma~\sigma~\varsigma}{Sigma}
+\term{\Tau~\tau}
+\term{\Upsilon~\upsilon}{Upsilon}
+\term{\Phi~\phi~\varphi}{Phi}
+\term{\Chi~\chi}{Chi}
+\term{\Psi~\psi}{Psi}
+\term{\Omega~\omega}{Omega}
+
+\bunch{Propositional Logic} % BUNCH
+\term{\wedge\bigwedge_{i}}{Conjunction}
+\term{\vee\bigvee_{i}}{Disjunction}
+\term{\neg}{Negation}
+\term{\implies}{(Material) Conditional}
+\term{\iff}{(Material) Biconditional}
+\term{oplus}{Exclusive Disjunction}
+\term{textbf{T},\texttt{1}}{Truth-Value True}
+\term{\textbf{F},\texttt{0}}{Truth-Value False}
+\term{\top}{Tautology}
+\term{\bot}{Contradiction}
+\term{\therefore}{Argument ``Therefore''}
+\term{\vDash}{Logical Entailment}
+\term{\vdash}{Logical Derivability}
+\term{\equiv}{Logical Equivalence}
+
+\bunch{Set Theory} % BUNCH
+\term{\cup\bigcup_{i}}{Union}
+\term{\cap\bigcap_{i}}{Intersection}
+\term{\overline{A},A^{\complement}}{Complement}
+\term{A-B,A\setminus B}{Difference}
+\term{\powerset(A)}{Power Set}
+\term{A\times B}{Cartesian Product}
+\term{A^{n}}{Product Space}
+\term{\in}{Element of}
+\term{\subseteq}{Subset of}
+\term{subset}{Proper Subset of}
+\term{=}{Equality}
+\term{\#A}{Set Cardinality}
+\term{\abv{A}}{Set Ordinality}
+\term{\varnothing}{Null Set}
+\term{\nats}{Natural Numbers $\{1,2,\ldots\}$}
+\term{\nats_{0}}{Whole Numbers $\{0,1,2,\ldots\}$}
+\term{\ints}{Integer Numbers}
+\term{\rats}{Rational Numbers}
+\term{\algs}{Algebraic Numbers}
+\term{\reals}{Real Numbers}
+\term{\complex}{Complex Numbers}
+\term{\aleph_{0}}{Countable Infinity}
+\term{\mathfrak{c}}{Continuum Cardinality}
+
+\bunch{Predicate Logic} % BUNCH
+\term{\forall}{Universal Quantifier}
+\term{\exists}{Existential Quantifier}
+\term{\quantif}{Generic Quantifier}
+
+\end{symbols}
